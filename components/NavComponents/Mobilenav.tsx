@@ -1,25 +1,30 @@
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Navlinks } from "@/data";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import Mobilenav from "./Mobilenav";
 
-const Nav = () => {
+const Mobilenav = () => {
   return (
-    <header className="shadow-md">
-      <nav className="flex justify-between items-center p-3 max-w-6xl mx-auto">
-        <Link
-          href={"/"}
-          className="tracking-wide uppercase font-semibold border-2 rounded-md p-2 border-black"
-        >
-          logo
-        </Link>
-        <ul className="hidden md:flex items-center gap-5">
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline">
+          <Image src={"/hamburger.svg"} alt="hamburger" width={10} height={8} className="w-8 h-6"/>
+        </Button>
+      </SheetTrigger>
+      <SheetContent>
+        <div className="flex flex-col gap-5 min-h-full py-5">
           {Navlinks.map((item) => {
             const islogin = item.title === "login";
             const isregister = item.title === "register";
             return (
-              <li key={item.id}>
+              <SheetClose key={item.id} asChild>
                 <Link
                   href={item.link}
                   className={cn(`capitalize hover:tracking-wide transition`, {
@@ -30,16 +35,13 @@ const Nav = () => {
                 >
                   {item.title}
                 </Link>
-              </li>
+              </SheetClose>
             );
           })}
-        </ul>
-        <div className="md:hidden">
-          <Mobilenav />
         </div>
-      </nav>
-    </header>
+      </SheetContent>
+    </Sheet>
   );
 };
 
-export default Nav;
+export default Mobilenav;

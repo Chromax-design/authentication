@@ -8,7 +8,7 @@ const MerriweatherFont = Merriweather({ subsets: ["latin"], weight: ["700"] });
 export default function Home() {
   return (
     <section className="py-10 grid md:grid-cols-2 gap-10 items-center px-3">
-      <div className="space-y-3">
+      <div className="space-y-3 order-2 md:order-1">
         <h1
           className={`${MerriweatherFont.className} text-3xl lg:text-5xl capitalize font-semibold`}
         >
@@ -40,7 +40,7 @@ export default function Home() {
         alt="authentication image"
         height={100}
         width={100}
-        className="max-w-lg w-full"
+        className="max-w-lg w-full order-1 md:order-2"
       />
     </section>
   );

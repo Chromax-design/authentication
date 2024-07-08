@@ -12,12 +12,12 @@ export default function Home() {
         <h1
           className={`${MerriweatherFont.className} text-3xl lg:text-5xl capitalize font-semibold`}
         >
-          Secure & Scalable Authentication system
+          Secure &amp; Scalable Authentication system
         </h1>
 
         <p className="text-sm leading-5">
           As a developer, I know how crucial secure and efficient authentication
-          is for any project. That's why I've crafted a robust, scalable, and
+          is for any project. That&apos;s why I&apos;ve crafted a robust, scalable, and
           customizable auth system just for you. With my solution, you can
           effortlessly integrate top-notch authentication and authorization into
           your applications, ensuring both security and ease of use.

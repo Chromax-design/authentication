@@ -96,6 +96,7 @@ const LoginPage = () => {
               <Button
                 variant={"outline"}
                 className="w-full text-xl py-4 !h-12 space-x-3"
+                key={item.id}
               >
                 {item.icon}
                 <span className="text-sm capitalize">{item.title}</span>
